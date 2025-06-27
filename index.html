@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Inventory App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>QR Inventory</h1>
+            <div class="header-buttons">
+                <button id="generate-qr-btn" class="button-secondary">Generate QR</button>
+                <button id="scan-qr-btn" class="button-secondary">Scan Item</button>
+                <button id="add-item-btn" class="button-primary">Add New Item</button>
+            </div>
+        </header>
+
+        <main id="inventory-list-container">
+            <h2>Inventory List</h2>
+            <div id="loader" class="loader"></div>
+            <table id="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Location</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </main>
+    </div>
+
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title">Add New Item</h2>
+            <form id="item-form">
+                <input type="hidden" id="ItemID" name="ItemID">
+                <label for="ItemName">Item Name:</label>
+                <input type="text" id="ItemName" name="ItemName" required>
+                <label for="Description">Description:</label>
+                <textarea id="Description" name="Description" rows="3"></textarea>
+                <label for="Quantity">Quantity:</label>
+                <input type="number" id="Quantity" name="Quantity" required>
+                <label for="Location">Location:</label>
+                <input type="text" id="Location" name="Location">
+                <button type="submit" id="save-item-btn" class="button-primary">Save Item</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="qr-code-modal" class="modal">
+        <div class="modal-content">
+             <span class="close-button">&times;</span>
+            <h2>Item Added Successfully!</h2>
+            <p>Print or save this QR code to attach to your item.</p>
+            <div id="qrcode-container"></div>
+            <a id="download-qr-link" class="button-secondary" download="qrcode.png">Download QR Code</a>
+        </div>
+    </div>
+
+    <div id="scanner-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Scan QR Code</h2>
+            <div id="qr-reader"></div>
+            <button id="close-scanner-btn" class="button-secondary">Cancel</button>
+        </div>
+    </div>
+
+    <div id="generator-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>QR Code Generator</h2>
+            <p>Enter any text or Item ID to create a QR code.</p>
+            <form id="generator-form">
+                <label for="text-to-encode">Text to Encode:</label>
+                <input type="text" id="text-to-encode" name="text-to-encode" required>
+                <button type="submit" class="button-primary">Generate</button>
+            </form>
+            <div id="generated-qrcode-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
