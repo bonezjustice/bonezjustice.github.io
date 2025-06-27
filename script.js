@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- CONFIGURATION ---
     // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz2FB_ZECd0CeIU_ep1wOFBL1j2ZFKSVG1YNvLBMwiO/dev';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbymR2VX7C2xYjgZX3AgemRAtQdudYfPRx6xu75BcwIVDgNBEaqRUWS5rvNSOMw0iR_ZaQ/exec';
 
     // --- DOM ELEMENT REFERENCES ---
     const inventoryTableBody = document.querySelector('#inventory-table tbody');
